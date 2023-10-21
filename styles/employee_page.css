@@ -1,0 +1,108 @@
+.employee_page {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 50px);
+}
+.employee_detail_container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  height: 500px;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.employee_detail_container .row {
+  justify-content: space-between;
+}
+.employee_detail_container * {
+  color: var(--background);
+}
+.employee_detail_container button {
+  font-weight: bold;
+
+  border-radius: 10px;
+  padding: 10px 10px;
+  width: 200px;
+  margin: 0 auto;
+  border: none;
+  box-shadow: 0px 0 15px black;
+  cursor: pointer;
+}
+
+#update_button {
+  background-color: var(--accent);
+}
+#update_button:hover {
+  background-color: var(--accent-hover);
+}
+#delete_button {
+  background-color: var(--danger);
+}
+#delete_button:hover {
+  background-color: var(--danger-hover);
+}
+
+.update_password_container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--secondary);
+
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  transition: ease-in-out 300ms;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.update_password_container form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.update_password_container form label {
+  font-weight: bold;
+}
+.update_password_container input {
+  font-size: 15px;
+  padding: 5px;
+}
+.update_button {
+  font-weight: bold;
+  background-color: var(--accent);
+  border-radius: 10px;
+  padding: 10px 10px;
+  width: 200px;
+  margin: 0 auto;
+  border: none;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  color: var(--background);
+}
+.update_button:hover {
+  background-color: var(--accent-hover);
+}
+
+.cancel_button {
+  font-weight: bold;
+  background-color: var(--primary);
+  border-radius: 10px;
+  padding: 10px 10px;
+  width: 200px;
+  margin: 0 auto;
+  border: none;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  color: var(--background);
+}
+.cancel_button:hover {
+  background-color: var(--primary-hover);
+}
+.employee_page .hidden {
+  top: -500px;
+}
