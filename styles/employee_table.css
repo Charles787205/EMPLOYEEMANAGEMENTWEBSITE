@@ -12,9 +12,11 @@
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  border-radius: 5px;
+
   margin-top: 5rem;
   max-height: 5rem;
+  box-shadow: 0 0 5px 2px rgb(72, 218, 79), 0 0 2px 5px white,
+    0 0 0 10px rgb(38, 223, 63);
 }
 .employee_table td,
 .employee_table th {

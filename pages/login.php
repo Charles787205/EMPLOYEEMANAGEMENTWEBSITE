@@ -32,7 +32,7 @@ if(isset($_SESSION['user'])){
           <h2>Employee Management System</h2>
             <h2>Login Page</h2>
              Enter Email: <input type="email" 
-             name="email" required="required" placeholder="john@example.com"/> <br/>
+             name="email" required placeholder="john@example.com"/> <br/>
              Enter Password: <input type="password" 
              name="password"  /> <br/>
              
@@ -48,7 +48,6 @@ if(isset($_SESSION['user'])){
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $employee = new Employee();
   $employee->setEmail($_POST['email']);
- 
   $employee->setPassword($_POST['password']);
   if($employee->getPassword() == null){
     $employee->setPassword("");

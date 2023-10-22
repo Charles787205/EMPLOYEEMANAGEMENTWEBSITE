@@ -8,10 +8,10 @@
 
     if ($retrievedEmployee instanceof Employee) {
       if($retrievedEmployee->getDepartment() != 'ADMIN'){
-      header('Location: login.php');
+      header('Location: index.php');
       exit();
-    }
-    } 
+    
+    }} 
     
   }
 ?>

@@ -25,6 +25,9 @@
         <thead>
           <tr>
             <th>Name</th>
+            <th>Position</th>
+            <th>Gender</th>
+            <th>Birthdate</th>
             <th>Department</th>
             <th>Mobile Number</th>
             <th>Email</th>
@@ -40,10 +43,16 @@
             $mobileNumber = $employee->getMobileNumber();
             $email = $employee->getEmail();
             $id = $employee->getId();
+            $position = $employee->getPosition();
+            $gender = $employee->getGender();
+            $birthDate = $employee->getBirthDate();
 
             // Output the data in a table row with an onclick event
             echo "<tr onclick='navigateToEmployee($id)'>";
             echo "<td>$name</td>";
+            echo "<td>$position</td>";
+            echo "<td>$gender</td>";
+            echo "<td>$birthDate</td>";
             echo "<td>$department</td>";
             echo "<td>$mobileNumber</td>";
             echo "<td>$email</td>";

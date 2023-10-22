@@ -6,8 +6,8 @@ require_once PROJECT_ROOT_PATH . '/Model/EmployeeModel.php';
 session_start();
 
 $user = $_SESSION['user'];
-
 $employee = $user;
+$isPasswordUpdated = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,12 +72,17 @@ $employee = $user;
   </div>
   <div class="update_password_container hidden" id='update_password_container'>
     <h1>Update Password:</h1>
-    <form action="profile.php" method="post">
+    <form action="profile.php" method="POST">
       <label for="password">Password:</label>
       <input type="password" name="password" id="password">
-      <button class='update_button'>Update</button>
+      <button class='update_button' onclick='toggleUpdatedContainer()'>Update</button>
     </form>
     <button class="cancel_button" onclick="toggleUpdatePasswordContainer()">Cancel</button>
+  </div>
+
+  <div class="updated_container hidden" id='updated_container'>
+    <h2>Password updated</h2>
+    <button onclick="toggleUpdatedContainer()">Continue</button>
   </div>
   </div>
   <script>
@@ -91,6 +96,16 @@ $employee = $user;
       }else{
         updateContainer.classList.add('hidden');
       }
+      
+    }
+    function toggleUpdatedContainer(){
+      console.log("hhh")
+      const uContainer = document.getElementById('updated_container');
+      if(uContainer.classList.contains('hidden')){
+        uContainer.classList.remove('hidden')
+      }else{
+        uContainer.classList.add('hidden');
+      }
     }
     
   </script>
@@ -100,6 +115,7 @@ $employee = $user;
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $employee->setPassword($_POST['password']);
     $employeeModel = new EmployeeModel();
-    $employeeModel->updateEmployee($employee);
+    $employeeModel->updatePassword($employee);
+    $isPasswordUpdated = true;
   }
 ?>

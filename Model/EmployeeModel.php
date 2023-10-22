@@ -126,7 +126,7 @@ class EmployeeModel extends Database
     }
 
     public function updateEmployee($employee){
-    $query = "UPDATE employee SET email=?, birthdate=DATE(?), position=?, gender=?, mobileNumber=?, salaryRate=?, departmentId=?, firstName=?, lastName=?, password=? WHERE id=?";
+    $query = "UPDATE employee SET email=?, birthdate=DATE(?), position=?, gender=?, mobileNumber=?, salaryRate=?, departmentId=?, firstName=?, lastName=? WHERE id=?";
       
     try {
         $email = $employee->getEmail();
@@ -138,10 +138,9 @@ class EmployeeModel extends Database
         $departmentId = $employee->getDepartmentId();
         $firstName = $employee->getFirstName();
         $lastName = $employee->getLastName();
-        $password = $employee->getPassword();
         $id = $employee->getId();
         $stmt = $this->connection->prepare($query);
-        $stmt->bind_param('sssssdisssi', $email, $birthdate, $position, $gender, $mobileNumber, $salaryRate,  $departmentId, $firstName, $lastName,$password, $id);
+        $stmt->bind_param('sssssdissi', $email, $birthdate, $position, $gender, $mobileNumber, $salaryRate,  $departmentId, $firstName, $lastName, $id);
 
         $stmt->execute();
         return $stmt;
@@ -150,6 +149,24 @@ class EmployeeModel extends Database
         // Handle the exception or log the error message
         throw new Exception('Error updating employee: ' . $e->getMessage());
     }
+  }
+  public function updatePassword($employee){
+    try{
+
+      $query = "UPDATE employee SET password=? WHERE id=?";
+      $stmt = $this->connection->prepare($query);
+      $password = $employee->getPassword();
+      $id = $employee->getId();
+      
+      $stmt->bind_param('si',$password ,$id);
+      $stmt->execute();
+      return true;
+    }catch(Exception $e){
+      throw $e;
+      return false;
+    }
+
+
   }
 
   public function deleteEmployeeById($employeeId) {

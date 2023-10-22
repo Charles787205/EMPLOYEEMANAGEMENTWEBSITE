@@ -10,13 +10,13 @@
   background-color: var(--secondary);
   max-width: 400px;
   padding: 3rem;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px rgb(72, 218, 79), 0 0 2px 5px white,
+    0 0 0 10px rgb(38, 223, 63);
 }
 .add_department form {
   display: flex;
   flex-direction: column;
-
   min-height: 150px;
 }
 .add_department input {
@@ -44,16 +44,18 @@
 }
 
 .department_card {
-  background-color: red;
   background-color: var(--secondary);
   min-height: 100px;
   padding: 2rem;
   box-shadow: var(--shadow);
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   transition: ease-in-out 500ms;
+
+  box-shadow: 0 0 5px 2px rgb(72, 218, 79), 0 0 2px 5px white,
+    0 0 0 10px rgb(38, 223, 63);
 }
 .department_card .row {
   gap: 2rem;

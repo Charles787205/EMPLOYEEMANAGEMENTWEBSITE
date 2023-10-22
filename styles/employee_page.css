@@ -6,13 +6,19 @@
 .employee_detail_container {
   display: flex;
   flex-direction: column;
-  background-color: var(--primary);
+  background-image: linear-gradient(
+    to bottom,
+    rgb(105, 31, 105),
+    rgb(26, 4, 51)
+  );
   padding: 2rem;
   border-radius: 10px;
   width: 400px;
   height: 500px;
   gap: 1rem;
   margin-top: 3rem;
+  box-shadow: 0 0 5px 2px rgb(128, 0, 110), 0 0 2px 5px white,
+    0 0 2px 10px rgb(128, 0, 110);
 }
 .employee_detail_container .row {
   justify-content: space-between;
@@ -105,4 +111,29 @@
 }
 .employee_page .hidden {
   top: -500px;
+}
+.updated_container {
+  background: var(--secondary);
+  position: fixed;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  top: 400px;
+}
+.updated_container button {
+  background-color: var(--accent);
+  color: var(--background);
+  border: none;
+  width: 150px;
+  padding: 10px 10px;
+  margin: auto auto;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.updated_container button:hover {
+  background-color: var(--accent-hover);
 }

@@ -24,7 +24,7 @@
   transition: ease-in-out 300ms;
 }
 body {
-  background-color: var(--background);
+  background: var(--background);
   height: 100vh;
 }
 a {
@@ -40,7 +40,9 @@ nav {
   position: sticky;
   top: 0;
 }
-
+button {
+  cursor: pointer;
+}
 ul {
   display: flex;
   list-style-type: none;
@@ -74,12 +76,18 @@ li:hover {
 }
 
 .register_container form {
-  background-color: var(--primary);
   padding: 1em;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(105, 31, 105),
+    rgb(26, 4, 51)
+  );
+  box-shadow: 0 0 5px 2px rgb(128, 0, 110), 0 0 2px 5px white,
+    0 0 2px 10px rgb(128, 0, 110);
 }
 .register_container .row {
   gap: 1rem;
@@ -128,6 +136,8 @@ li:hover {
   flex-direction: column;
   gap: 1rem;
   min-width: 400px;
+  box-shadow: 0 0 5px 2px rgb(128, 0, 110), 0 0 2px 5px white,
+    0 0 2px 10px rgb(128, 0, 110);
 }
 .login_page form input {
   font-size: 15px;
@@ -149,4 +159,34 @@ li:hover {
 }
 .login_page form button:hover {
   background-color: var(--accent-hover);
+}
+.error_page_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.employee_not_found {
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px var(--danger), 0 0 2px 5px white,
+    0 0 0 10px var(--danger);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--secondary);
+  color: var(--background);
+  padding: 2rem;
+}
+.employee_not_found h1 {
+  color: var(--danger);
+}
+.employee_not_found button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: var(--shadow);
+  background-color: var(--danger);
+  color: var(--background);
 }

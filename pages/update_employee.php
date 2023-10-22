@@ -116,9 +116,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $employee->setDepartmentId($_POST['department']);
     $employee->setSalaryRate($_POST['salary_rate']);
     $employee->setBirthdate($_POST['date']);
-    echo $employee->toJson();
+    
     $employeeModel = new EmployeeModel();
     $employeeModel -> updateEmployee($employee);
-    //header('Location: employee_list.php');
+    header('Location: employee_list.php');
 }
 ?>
