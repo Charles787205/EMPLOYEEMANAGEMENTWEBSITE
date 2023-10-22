@@ -1,0 +1,39 @@
+DROP DATABASE employee_management_database;
+CREATE DATABASE employee_management_database;
+
+use employee_management_database;
+
+CREATE TABLE Department (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) UNIQUE
+);
+
+
+CREATE TABLE Employee (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  firstName VARCHAR(255),
+  lastName VARCHAR(255),
+  birthDate DATE,
+  gender ENUM ('MALE', 'FEMALE', 'OTHER'),
+  mobileNumber VARCHAR(20),
+  salaryRate DECIMAL(10, 2),  
+  position VARCHAR(255),
+  email VARCHAR(255) UNIQUE,
+  departmentId INT,
+  password VARCHAR(255) DEFAULT '',
+  image VARCHAR(255) ,
+  FOREIGN KEY (departmentId) REFERENCES Department(id)
+);
+
+INSERT INTO Department (name)
+VALUES
+  ('ADMIN'),
+  ('IT'),
+  ('HR'),
+  ('Finance'),
+  ('Marketing');
+
+INSERT INTO Employee (firstName, lastName, birthDate, gender, mobileNumber, salaryRate, position, email, departmentId, password)
+VALUES
+  ('John', 'Doe', '1990-03-15', 'MALE', '123-456-7890', 50000.00, 'Manager', 'admin@gmail.com', 1, 'password123'),
+  ('Jane', 'Smith', '1985-07-20', 'FEMALE', '987-654-3210', 60000.00, 'Developer', 'jane.smith@example.com', 3, 'password456');

@@ -42,8 +42,14 @@ if (isset($_GET['id'])) {
   ?>
   <div class="employee_page">
     <div class="employee_detail_container">
+      <img src="<?php  if($employee->getImage()!=null){
+        echo $employee->getImage();
+      }else{
+        echo 'pages/../uploads/profile.png';
+      }
+      ?>" alt="Image">
       <h2><?php echo $employee->getName()?></h2>
-    
+      
     <div class="row">
       <h3>Employee Number:</h3>
       <p><?php echo $employee->getMobileNumber() ?></p>

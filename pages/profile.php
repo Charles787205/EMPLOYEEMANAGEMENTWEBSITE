@@ -30,6 +30,12 @@ $isPasswordUpdated = false;
   ?>
   <div class="employee_page">
     <div class="employee_detail_container">
+      <a href="upload.php"><img src="<?php  if($employee->getImage()!=null){
+        echo $employee->getImage();
+      }else{
+        echo 'pages/../uploads/profile.png';
+      }
+      ?>" alt="Image"></a>
       <h1>My Profile</h1>
       <h2><?php echo $employee->getName()?></h2>
     

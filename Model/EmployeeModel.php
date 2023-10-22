@@ -84,7 +84,6 @@ class EmployeeModel extends Database
         $gender = $employee->getGender();
         $mobileNumber = $employee->getMobileNumber();
         $salaryRate = $employee->getSalaryRate();
-        
         $departmentId = $employee->getDepartmentId();
         $firstName = $employee->getFirstName();
         $lastName = $employee->getLastName();
@@ -114,7 +113,8 @@ class EmployeeModel extends Database
       $query = 'UPDATE employee SET image=? WHERE id=?';
       $image = $employee->getImage();
       $stmt = $this->connection->prepare($query);
-      $stmt->bind_param('si', $employee->getImage(), $employee->getId());
+      $id = $employee->getId();
+      $stmt->bind_param('si', $image, $id);
       $stmt->execute();
     }
 

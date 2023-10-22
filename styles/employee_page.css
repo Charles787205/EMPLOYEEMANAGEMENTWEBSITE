@@ -6,17 +6,17 @@
 .employee_detail_container {
   display: flex;
   flex-direction: column;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  height: 650px;
+  gap: 1rem;
+  margin-top: 3rem;
   background-image: linear-gradient(
     to bottom,
     rgb(105, 31, 105),
     rgb(26, 4, 51)
   );
-  padding: 2rem;
-  border-radius: 10px;
-  width: 400px;
-  height: 500px;
-  gap: 1rem;
-  margin-top: 3rem;
   box-shadow: 0 0 5px 2px rgb(128, 0, 110), 0 0 2px 5px white,
     0 0 2px 10px rgb(128, 0, 110);
 }
@@ -25,6 +25,18 @@
 }
 .employee_detail_container * {
   color: var(--background);
+}
+.employee_detail_container a {
+  margin: 0 auto;
+}
+.employee_detail_container img {
+  width: 200px;
+  min-height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+  box-shadow: 0 0 5px 2px rgb(128, 0, 110), 0 0 2px 5px white,
+    0 0 2px 10px rgb(236, 108, 219);
 }
 .employee_detail_container button {
   font-weight: bold;

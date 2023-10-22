@@ -8,7 +8,7 @@
 
     if ($retrievedEmployee instanceof Employee) {
       if($retrievedEmployee->getDepartment() != 'ADMIN'){
-      header('Location: index.php');
+        header('Location: index.php');
       exit();
     
     }} 
