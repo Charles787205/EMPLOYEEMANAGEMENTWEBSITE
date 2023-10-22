@@ -105,8 +105,8 @@ li:hover {
 }
 
 .register_container form button {
-  background-color: var(--secondary);
-  color: var(--primary);
+  background-color: var(--accent);
+  color: var(--background);
   font-size: 20px;
   padding: 10px 0;
   width: 20rem;
@@ -115,6 +115,9 @@ li:hover {
   border: none;
   box-shadow: var(--shadow);
   border-radius: 10px;
+}
+.register_container form button:hover {
+  background-color: var(--accent-hover);
 }
 #signout_button {
   margin-left: auto;
