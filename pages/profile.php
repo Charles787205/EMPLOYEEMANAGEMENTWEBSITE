@@ -4,7 +4,9 @@ require_once __DIR__ . '/../inc/bootstrap.php';
 require_once PROJECT_ROOT_PATH . '/Objects/Employee.php';
 require_once PROJECT_ROOT_PATH . '/Model/EmployeeModel.php';
 session_start();
-
+if($_SESSION['user']==null){
+  header('Location: login.php');
+}
 $user = $_SESSION['user'];
 $employee = $user;
 $isPasswordUpdated = false;
@@ -29,6 +31,9 @@ $isPasswordUpdated = false;
     }
   ?>
   <div class="employee_page">
+    <?php if($user->getDepartment() != 'ADMIN') {
+      require_once PROJECT_ROOT_PATH . '/components/side_panel.php';
+      }?>
     <div class="employee_detail_container">
       <a href="upload.php"><img src="<?php  if($employee->getImage()!=null){
         echo $employee->getImage();

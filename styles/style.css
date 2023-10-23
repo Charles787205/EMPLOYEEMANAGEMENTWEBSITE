@@ -26,6 +26,7 @@
 body {
   background: var(--background);
   height: 100vh;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -231,4 +232,9 @@ li:hover {
   flex-direction: column;
   color: var(--background);
   cursor: pointer;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }

@@ -25,6 +25,15 @@ CREATE TABLE Employee (
   FOREIGN KEY (departmentId) REFERENCES Department(id)
 );
 
+CREATE TABLE Announcement (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    employeeId INT,
+    dateCreated TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    title VARCHAR(255),
+    description TEXT,
+    FOREIGN KEY (employeeId) REFERENCES Employee(id)
+);
+
 INSERT INTO Department (name)
 VALUES
   ('ADMIN'),
@@ -33,7 +42,15 @@ VALUES
   ('Finance'),
   ('Marketing');
 
+
+
 INSERT INTO Employee (firstName, lastName, birthDate, gender, mobileNumber, salaryRate, position, email, departmentId, password)
 VALUES
   ('John', 'Doe', '1990-03-15', 'MALE', '123-456-7890', 50000.00, 'Manager', 'admin@gmail.com', 1, 'password123'),
   ('Jane', 'Smith', '1985-07-20', 'FEMALE', '987-654-3210', 60000.00, 'Developer', 'jane.smith@example.com', 3, 'password456');
+
+
+INSERT INTO Announcement (title, description, employeeId)
+VALUES
+  ('Important Meeting', 'There will be an important meeting at 10:00 AM in the conference room.', 1),
+  ('New Project Launch', 'We are excited to announce the launch of our new project "Project X".', 2);

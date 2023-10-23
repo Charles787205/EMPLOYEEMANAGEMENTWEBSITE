@@ -5,6 +5,7 @@
     <a href="employee_list.php"><li>Employees</li></a>
     <a href="register.php"><li>Add Employees</li></a>
     <a href="department_page.php"><li>Departments</li></a>
+    <a href='announcements.php'><li>Announcements</li></a>
     <a href='sign_out.php' id='signout_button'><li>Signout</li></a>
   </ul>
 </nav>

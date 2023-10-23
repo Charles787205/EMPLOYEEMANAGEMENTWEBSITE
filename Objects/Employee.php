@@ -95,21 +95,6 @@
   public function getPassword(){
     return $this->password;
   }
-  public function toJson() {
-        return json_encode([
-            'id' => $this->getId(),
-            'firstName' => $this->getFirstName(),
-            'lastName' => $this->getLastName(),
-            'birthDate' => $this->getBirthDate(),
-            'position' => $this->getPosition(),
-            'gender' => $this->getGender(),
-            'mobileNumber' => $this->getMobileNumber(),
-            'salaryRate' => $this->getSalaryRate(),
-            'departmentId' => $this->getDepartmentId(),
-            'department' => $this->getDepartment(),
-            'email' => $this->getEmail(),
-            'image'=> $this->getImage()
-        ]);
-    }
+  
  }
  ?>
